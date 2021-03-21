@@ -1,6 +1,6 @@
 import os
 import csv
-
+from time import sleep
 
 def loadFile(path):
     with open(path) as csv_file:
@@ -57,11 +57,15 @@ def selectColums(categories, primaryKey):
             if(num.lower()=="end"):
                 end=True;
             else:
-                num=int(num);
-                if(selectedIntication[num]=="*"):
-                    selectedIntication[num]=" ";
-                elif(selectedIntication[num]==" "):
-                    selectedIntication[num]="*";
+                try:
+                    num=int(num);
+                    if(selectedIntication[num]=="*"):
+                        selectedIntication[num]=" ";
+                    elif(selectedIntication[num]==" "):
+                        selectedIntication[num]="*";
+                except Exception:
+                    print("Wrong Format");
+                    sleep(1);
     counter=0;
     final=[];
     for intication in selectedIntication:
