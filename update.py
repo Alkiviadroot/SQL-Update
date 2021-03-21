@@ -46,7 +46,7 @@ def selectColums(categories, primaryKey):
     end=False;
     while(not end):
         os.system('cls' if os.name == 'nt' else 'clear');
-        print("Select colums for multiple colums use comma (eg. 1,2,3...");
+        print("Select colums - for multiple colums use comma (eg. 1,2,3...)");
         counter = 0;
         for info in categories:
             print(selectedIntication[counter] + " ["+str(counter)+"] "+info);
@@ -85,11 +85,22 @@ def matchToDatabase(colums, categories):
 
 
 def getPrimary(categories):
-    counter = 0;
-    for info in categories:
-        print("["+str(counter)+"] "+info);
-        counter += 1;
-    primaryKey = int(input("Put the number of the Primary Key: "));
+    correct=False;
+    while(not correct):
+        counter = 0;
+        for info in categories:
+            print("["+str(counter)+"] "+info);
+            counter += 1;
+        try:
+            primaryKey = int(input("Put the number of the Primary Key: "));
+            if(primaryKey>=0 and primaryKey<counter):
+                correct=True;
+            else:
+                os.system('cls' if os.name == 'nt' else 'clear');
+                print("Primary Key Incorrect");
+        except Exception:
+            os.system('cls' if os.name == 'nt' else 'clear');
+            print("Primary Key Incorrect");
     return primaryKey;
 
 
