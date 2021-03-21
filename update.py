@@ -38,32 +38,37 @@ def generateScript(tableName, primaryKey, selectedColums, databaseNames, data,pr
 
 def selectColums(categories, primaryKey):
     selectedIntication=[];
-    for i in range(categories.len()):
+    for i in range(len(categories)):
         if(i==primaryKey):
-            selectedIntication.append["P"];
+            selectedIntication.append("P");
         else:
-            selectedIntication.append[""];
-    os.system('cls' if os.name == 'nt' else 'clear');
-    counter = 0;
-    for info in categories:
-        print(selectedIntication + " ["+str(counter)+"] "+info);
-    
-    
-    # end=True;
-    # while(end):
-    #     os.system('cls' if os.name == 'nt' else 'clear');
-    #     print("Primary Key: ["+str(primaryKey)+"] "+categories[primaryKey]);
-    #     counter = 0;
-    #     selected=[];
-    #     for info in categories:
-    #         if(info != categories[primaryKey]):
-    #             for x in selected:
-    #                 print("* ["+str(counter)+"] "+info)
-    #             print("  ["+str(counter)+"] "+info);
-    #         counter += 1;
-    #     numbers = input("Give all the colums separated by comma (eg. 1,4,5...): ");
-    #     selected = numbers.split(",");
-    # return selected;
+            selectedIntication.append(" ");
+    end=False;
+    while(not end):
+        os.system('cls' if os.name == 'nt' else 'clear');
+        print("Select colums for multiple colums use comma (eg. 1,2,3...");
+        counter = 0;
+        for info in categories:
+            print(selectedIntication[counter] + " ["+str(counter)+"] "+info);
+            counter+=1;
+        numbers = input("Type \"end\" to stop: ");
+        selected = numbers.split(",");
+        for num in selected:
+            if(num.lower()=="end"):
+                end=True;
+            else:
+                num=int(num);
+                if(selectedIntication[num]=="*"):
+                    selectedIntication[num]=" ";
+                elif(selectedIntication[num]==" "):
+                    selectedIntication[num]="*";
+    counter=0;
+    final=[];
+    for intication in selectedIntication:
+        if (intication=="*"):
+            final.append(counter);
+        counter+=1;
+    return final;
 
 
 def matchToDatabase(colums, categories):
