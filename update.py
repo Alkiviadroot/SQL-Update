@@ -4,19 +4,24 @@ import os
 import csv
 from time import sleep
 
-def loadFile(path):
-    with open(path) as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',');
-        first = True;
-        data = [];
-        for row in csv_reader:
-            if(first):
-                categories = row;
-                first = False;
-            else:
-                data.append(row);
-    csv_file.close();
-    return(categories, data);
+def loadFile():
+    while(True):
+        try:
+            path=input("Give the path of CSV file: ");
+            with open(path) as csv_file:
+                csv_reader = csv.reader(csv_file, delimiter=',');
+                first = True;
+                data = [];
+                for row in csv_reader:
+                    if(first):
+                        categories = row;
+                        first = False;
+                    else:
+                        data.append(row);
+            csv_file.close();
+            return(categories, data);
+        except Exception:
+            print("File not Found");
 
 
 def generateScript(tableName, primaryKey, selectedColums, databaseNames, data,primaryKeyNum):
@@ -133,8 +138,7 @@ def banner():
 
 def main():
     banner();
-    fileCsv=input("Give the path of CSV file: ");
-    arrays = loadFile(fileCsv);
+    arrays=loadFile();
     categories = arrays[0];
     data = arrays[1];
     tableName = input("Database-Table name: ");
