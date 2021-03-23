@@ -30,7 +30,7 @@ sudo chmod +x Sql-Update-Linux
 ---
 ## Windows
 ### Download 
-* [Python3]("https://www.python.org/downloads/" "Python3") for your system (If you will use the python script instead of the executable)
-* [SQL-Update]("https://github.com/Alkiviadroot/SQL-Update/archive/refs/heads/master.zip" "SQL-Update.zip") Repository
+* [Python3](https://www.python.org/downloads/ "Python3") for your system (If you will use the python script instead of the executable)
+* [SQL-Update](https://github.com/Alkiviadroot/SQL-Update/archive/refs/heads/master.zip "SQL-Update.zip") Repository
 
 ### Run Python Script
