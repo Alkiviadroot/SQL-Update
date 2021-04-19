@@ -1,7 +1,7 @@
 # Installation
 
-## Running the Scrip
-There is 2 ways to use the script. You can downlaod all the needed packages to run the python script directlly __*OR*__ you can use the prepacaged (*executable*) version that I made in the **dist/** directory. Both ways will work fine its up to your personal preferece. 
+## Running the Script
+There is 2 ways to use the script. You can download all the needed packages to run the python script directly __*OR*__ you can use the prepackaged (*executable*) version that I made in the **dist/** directory. Both ways will work fine its up to your personal preference. 
 
 ---
 ---
@@ -30,7 +30,8 @@ sudo chmod +x Sql-Update-Linux
 ---
 ## Windows
 ### Download 
-* [Python3](https://www.python.org/downloads/ "Python3") for your system (If you will use the python script instead of the executable)
+* [Python3](https://www.python.org/downloads/ "Python3") (If you will use the python script instead of the executable)
 * [SQL-Update](https://github.com/Alkiviadroot/SQL-Update/archive/refs/heads/master.zip "SQL-Update.zip") Repository
 
 ### Run Python Script
+test
